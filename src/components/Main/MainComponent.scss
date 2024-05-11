@@ -1,0 +1,21 @@
+.Tickets {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 3rem;
+ max-width: 727px;
+ position: relative;
+}
+
+.Tickets__buttons {
+ margin-bottom: calc(-2rem);
+}
+
+@media (max-width: 630px) {
+ .Tickets {
+  gap: 1rem;
+ }
+ .Tickets__buttons {
+  margin-bottom: 0;
+ }
+}

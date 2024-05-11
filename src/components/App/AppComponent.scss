@@ -1,0 +1,19 @@
+.App {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 100vmin;
+}
+
+@media (max-width: 630px) {
+  .App {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

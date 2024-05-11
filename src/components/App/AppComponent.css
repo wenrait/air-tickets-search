@@ -1,0 +1,11 @@
+.App {
+  width: 100%;
+  max-width: 1400px;
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=AppComponent.css.map */

@@ -1,0 +1,61 @@
+@import "../../variables";
+
+.Ticket {
+  width: 100%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: $border-radius--primary;
+  background: $color--light-lavender;
+  box-sizing: border-box;
+  max-height: 177px;
+}
+
+.Ticket__header {
+  display: flex;
+  max-height: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Ticket__price {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color--purple;
+}
+
+.Ticket__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Ticket__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 110px;
+}
+
+.Ticket__details__text {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.Ticket__details__text--lavender {
+  color: $color--lavender;
+}
+
+.Ticket__details__text--purple {
+  color: $color--purple;
+}
+
+@media (max-width: 1400px) {
+  .Ticket {
+    padding: 1.5rem;
+  }
+}
+

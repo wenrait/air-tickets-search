@@ -1,0 +1,44 @@
+.Form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.Form__input {
+  display: none;
+}
+
+.Form__label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgb(133, 138, 227);
+  cursor: pointer;
+}
+
+.Form__input + .Form__label::before {
+  border: 1px solid rgb(78, 20, 140);
+  width: 21px;
+  height: 21px;
+  content: "";
+  border-radius: 4px;
+}
+
+.Form__input--transfers + .Form__label::before {
+  border-radius: 4px;
+}
+
+.Form__input--carriers + .Form__label::before {
+  border-radius: 50%;
+}
+
+.Form__input--transfers:checked + .Form__label::before {
+  background: url("../../svg/check_1.svg") no-repeat center;
+}
+
+.Form__input--carriers:checked + .Form__label::before {
+  background: url("../../svg/check_2.svg") no-repeat center;
+}
+
+/*# sourceMappingURL=FormComponent.css.map */
