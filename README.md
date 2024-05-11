@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+В конце модуля вам предстоит создать приложение для поиска авиабилетов с помощью React, Redux Toolkit и TypeScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Особенности приложения:
+Работа с фейковым серверным API с помощью async-thunk.
+Сортировка билетов по цене, длительности перелёта и количеству пересадок.
+Фильтрация по авиакомпаниям.
+Фильтрация по количеству пересадок.
+Вы можете использовать любой формат данных, но он должен поддерживать сортировку.
 
-Currently, two official plugins are available:
+Пример сущности, приходящей из API эталонного задания:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    export interface TicketTime {
+        startTime: string;
+        endTime: string;
+    }
 
-## Expanding the ESLint configuration
+    export interface Ticket {
+        id: number;
+        from: string;
+        to: string;
+        company: string;
+        price: number;
+        currency: 'RUB';
+        time: TicketTime;
+        duration: number;
+        date: string;
+        connectionAmount: number | null;
+    }
+Чтобы создать заготовку проекта, воспользуйтесь Vite и выберите пресет react-ts или react-swc-ts:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+npm create vite@latest или yarn create vite
 
-- Configure the top-level `parserOptions` property like this:
+Также вы можете использовать Create React App (но учтите, что с сентября 2022 г. эта утилита больше не поддерживается).
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+КРИТЕРИИ ОЦЕНИВАНИЯ
+Всего за проект можно получить 10 баллов.
+
+Функциональные требования:
+Проект создан с помощью Vite или Create React App, исправно запускается с помощью команды npm start или npm run dev и собирается с помощью npm run build.
+
+Полностью удовлетворяет — 2 балла.
+Частично удовлетворяет — 1 балл (проект собирается с ошибками).
+Не удовлетворяет — 0 баллов.
+Проект использует Redux Toolkit, не использует стандартный Redux с createStore, не использует легаси-методы connect, mapStateToProps, mapDispatchToProps.
+
+Полностью удовлетворяет — 2 балла.
+Частично удовлетворяет — 1 балл (проект исправно работает, но использует старый API).
+Не удовлетворяет — 0 баллов.
+Требования к адаптивной вёрстке — приложение в целом соответствует макету. Версии для ПК и мобильных устройств исправно работают.
+
+Полностью удовлетворяет — 2 балла.
+Частично удовлетворяет — 1 балл (неправильная работа на одной из версий, сильное несоответствие макету).
+Не удовлетворяет — 0 баллов.
+Используются дополнительные методы из Redux Toolkit, такие как createAsyncThunk для запросов к API, createEntityAdapter для работы с массивами данных.
+
+За каждый дополнительный метод — 1 балл.
+Проект написан на TypeScript:
+
+Полностью удовлетворяет — 2 балла.
+Не удовлетворяет — 0 баллов.
